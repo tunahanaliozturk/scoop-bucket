@@ -23,8 +23,9 @@ jobs:
           "$env:USERPROFILE\scoop\shims" | Out-File -Append -Encoding utf8 $env:GITHUB_PATH
       - name: Add this bucket and install derbent
         run: |
-          scoop bucket add derbent $env:GITHUB_WORKSPACE
-          scoop install derbent/derbent
+          # Scoop clones a bucket only from a git URL, so this installs what is on the default branch.
+          scoop bucket add derbent https://github.com/${{ github.repository }}
+          scoop install derbent
           if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
       - name: Run
         run: derbent version
