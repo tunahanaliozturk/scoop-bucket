@@ -1,0 +1,33 @@
+{
+    "version": "1.0.0",
+    "description": "One guarded pass for all your coding agents' tool calls.",
+    "homepage": "https://github.com/tunahanaliozturk/derbent",
+    "license": "Apache-2.0",
+    "architecture": {
+        "64bit": {
+            "url": "https://github.com/tunahanaliozturk/derbent/releases/download/v1.0.0/derbent-v1.0.0-windows-amd64.exe#/derbent.exe",
+            "hash": "02b1bf67dd4874b9cf3a1e056047490fe950923400244f1c883a18716f1145b4"
+        },
+        "arm64": {
+            "url": "https://github.com/tunahanaliozturk/derbent/releases/download/v1.0.0/derbent-v1.0.0-windows-arm64.exe#/derbent.exe",
+            "hash": "803b3ddbdd65ea640e5f04d24abb89ead1d2cbb1962f8ce3554090edbd00d3f7"
+        }
+    },
+    "bin": "derbent.exe",
+    "checkver": {
+        "github": "https://github.com/tunahanaliozturk/derbent"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://github.com/tunahanaliozturk/derbent/releases/download/v$version/derbent-v$version-windows-amd64.exe#/derbent.exe"
+            },
+            "arm64": {
+                "url": "https://github.com/tunahanaliozturk/derbent/releases/download/v$version/derbent-v$version-windows-arm64.exe#/derbent.exe"
+            }
+        },
+        "hash": {
+            "url": "https://github.com/tunahanaliozturk/derbent/releases/download/v$version/SHA256SUMS"
+        }
+    }
+}
